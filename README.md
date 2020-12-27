@@ -1,5 +1,3 @@
-# Introdução
+# Estudo de Golang!
 
-Este repositório contém os arquivos relacionados ao meu estudo de GoLang.
-
-Comecei estudando 
+Este é o meu repositório de estudo de Golang.
