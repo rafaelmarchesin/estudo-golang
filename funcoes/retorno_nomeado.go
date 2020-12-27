@@ -8,6 +8,7 @@ func main() {
 }
 
 //Como já criamos as novas variáveis no retorno, não precisamos colocar ":="
+//A técnica abaixo é chamada de retorno limpo, pois não é passado nada no "return"
 func troca(p1, p2 int) (segundo int, primeiro int) {
 	primeiro = p1
 	segundo = p2
