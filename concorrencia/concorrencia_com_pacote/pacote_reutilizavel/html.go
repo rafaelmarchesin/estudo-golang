@@ -9,7 +9,7 @@ import (
 	"regexp"
 )
 
-//Titulo...
+//Titulo ...
 func Titulo(urls ...string) <-chan string {
 	c := make(chan string)
 	for _, url := range urls {

@@ -5,6 +5,8 @@ import (
 	"io/ioutil"
 	"net/http"
 	"regexp"
+
+	html "/home/rafael/Documentos/Estudos/golang/concorrencia/pacote_reutilizave/html"
 )
 
 //Estudo sobre padrões de concorrência em Golang
@@ -20,6 +22,8 @@ func main() {
 	fmt.Println("Chegou em segundo - t1:", <-t1, "| t2:", <-t2)
 	//fmt.Println("Chegou em terceiro - t2:", <-t2)
 	//fmt.Println("Chegou em quarto - t2:", <-t2)
+
+	html.Titulo(<-t1)
 }
 
 //Esse código um channel já preparado para executar as goroutines, não é preciso fazer nenhuma inserção a mais
