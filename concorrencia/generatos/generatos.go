@@ -5,8 +5,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"regexp"
-
-	html "/home/rafael/Documentos/Estudos/golang/concorrencia/pacote_reutilizave/html"
 )
 
 //Estudo sobre padrões de concorrência em Golang
