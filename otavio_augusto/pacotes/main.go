@@ -14,12 +14,25 @@ package main
 //Quando lidamos com mais de um pacote no mesmo projeto, é preciso criar um módulo.
 //O módulo é um conjunto de pacotes criados no projeto (Um pacote de pacotes!).
 
+//Ao instalar um pacote externo, esse pacote é inserido dentro do go.mod, por isso é
+//preciso fazer o "go get" dentro da pasta principal da aplicação, ou seja, dentro da
+//pasta que está o go.mod
+
+//Caso a gente não use o pacote em nenhum momento da nossa aplicação, ele não será excluido
+//automaticamente do go.mod, para excluir, é preciso rodar o comando "go mod tidy", que exclui
+//todos os pacotes que não foram usados
+
 import (
 	"fmt"
 	"modulo/auxiliar" //É preciso importar o outro pacote
+
+	"github.com/badoux/checkmail" //Este pacote será usado em um momento futuro do curso
 )
 
 func main() {
 	fmt.Println("Testando...")
 	auxiliar.Escrever()
+	erro := checkmail.ValidateFormat("rmarchesin@gmail.com")
+
+	fmt.Println("Ocorreu erro?", erro)
 }
