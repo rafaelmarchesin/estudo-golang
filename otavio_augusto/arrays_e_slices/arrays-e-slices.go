@@ -49,4 +49,20 @@ func main() {
 
 	//O append cria um novo slice acrescentando valores nas próximas posições livres do slice
 	slice = append(slice, 18)
+
+	//-----------------------------------
+	//-------- ARRAYS INTERNOS ----------
+	//-----------------------------------
+
+	//Tem o tamanho 10 e a capacidade 15
+	//O que é a capacidade?
+	slice3 := make([]float32, 10, 15)
+	//Essa função make criou um slice que referencia 10 posições de um array que possui 15 posições.
+
+	fmt.Println(slice3)
+
+	//Nesta caso, apenas referenciamos o tamanho do slice
+	//Quando não passamos a capacidade, a capacidade do slice é o tamanho dele, neste caso, 4
+	slice4 := make([]float32, 4)
+	fmt.Println("Capacidade:", cap(slice4))
 }
