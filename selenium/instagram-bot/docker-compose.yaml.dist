@@ -1,0 +1,43 @@
+version: "3.5"
+services:
+  app:
+    build:
+      context: .
+      target: dev
+    volumes:
+    - ./app/:/app
+    - ./db-test/:/db-test
+    env_file: env
+  db-mysql:
+    image: mysql:8
+    env_file: env
+    ports:
+      - 3306:3306
+    volumes:
+    - ./scripts/sqls:/docker-entrypoint-initdb.d
+
+
+# Usar:
+# docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:4.0.0-rc-1-20210902
+
+# version: '3.5'
+# 
+# networks:
+#     web:
+#       external: true
+#       driver:  bridge
+# 
+# services:
+#     chrome:
+#         image: selenium/standalone-chrome:latest
+#         hostname: chrome
+#         networks:
+#           - web
+#         privileged: true
+#         shm_size: 2g
+#     framework:
+#         build: .
+#         networks:
+#             - web
+#         depends_on: 
+#             - chrome
